@@ -20,7 +20,7 @@ public class studentController {
         return studentService.getStudentList();
     }
 
-    @GetMapping("/students/gender/{gender}")
+    @GetMapping("/students/genders/{gender}")
     public List<Student> getStudentListByGender(@PathVariable String gender) {
         return studentService.getStudentListByGender(gender);
     }
@@ -40,7 +40,7 @@ public class studentController {
         studentService.deleteStudentById(id);
     }
 
-    @PatchMapping("/students/{id}")
+    @PutMapping("/students/{id}")
     public void updateStudentInfo(@PathVariable Integer id, @RequestBody Student student) {
         studentService.updateStudentInfo(id, student);
     }
