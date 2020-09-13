@@ -2,6 +2,7 @@ package com.thoughtworks.capability.gtb.restfulapidesign.controller;
 
 import com.thoughtworks.capability.gtb.restfulapidesign.domain.Group;
 import com.thoughtworks.capability.gtb.restfulapidesign.service.GroupService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +19,10 @@ public class groupController {
     @PostMapping("/groups")
     public List<Group> divideGroup() {
         return groupService.divideGroup();
+    }
+
+    @GetMapping("/groups")
+    public List<Group> getGroup() {
+        return groupService.getGroup();
     }
 }

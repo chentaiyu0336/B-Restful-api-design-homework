@@ -20,4 +20,8 @@ public class GroupService {
     public List<Group> divideGroup() {
         return groupRepository.divide(studentRepository.getStudentList());
     }
+
+    public List<Group> getGroup() {
+        return groupRepository.getGroup();
+    }
 }

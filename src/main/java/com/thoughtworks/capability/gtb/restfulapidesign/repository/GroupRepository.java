@@ -13,7 +13,8 @@ import java.util.List;
 public class GroupRepository {
     List<Group> groupList = new ArrayList<>();
 
-    {
+    public void groupInit() {
+        groupList.clear();
         groupList.add(new Group(1, "Team1", null, new ArrayList<>()));
         groupList.add(new Group(2, "Team2", null, new ArrayList<>()));
         groupList.add(new Group(3, "Team3", null, new ArrayList<>()));
@@ -23,12 +24,17 @@ public class GroupRepository {
     }
 
     public List<Group> divide(List<Student> studentList) {
+        groupInit();
         Collections.shuffle(studentList);
         int index = 0;
         for (Student student : studentList) {
             groupList.get(index % 6).getStudentList().add(student);
             index++;
         }
+        return groupList;
+    }
+
+    public List<Group> getGroup() {
         return groupList;
     }
 }
