@@ -42,4 +42,8 @@ public class GroupRepository {
         groupList.get(id-1).setName(name);
         return groupList;
     }
+
+    public Group searchGroupById(Integer id) {
+        return groupList.get(id-1);
+    }
 }

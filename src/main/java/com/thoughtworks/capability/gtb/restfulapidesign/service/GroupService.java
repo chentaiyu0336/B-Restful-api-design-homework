@@ -28,4 +28,8 @@ public class GroupService {
     public List<Group> updateGroupName(Integer id, String name) {
         return groupRepository.updateGroupName(id, name);
     }
+
+    public Group findGroupById(Integer id) {
+        return groupRepository.searchGroupById(id);
+    }
 }
