@@ -2,9 +2,7 @@ package com.thoughtworks.capability.gtb.restfulapidesign.controller;
 
 import com.thoughtworks.capability.gtb.restfulapidesign.domain.Group;
 import com.thoughtworks.capability.gtb.restfulapidesign.service.GroupService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +22,10 @@ public class groupController {
     @GetMapping("/groups")
     public List<Group> getGroup() {
         return groupService.getGroup();
+    }
+
+    @PatchMapping("/groups/{id}/{name}")
+    public List<Group> updateGroupName(@PathVariable Integer id, @PathVariable String name) {
+        return groupService.updateGroupName(id, name);
     }
 }

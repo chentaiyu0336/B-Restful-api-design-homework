@@ -37,4 +37,9 @@ public class GroupRepository {
     public List<Group> getGroup() {
         return groupList;
     }
+
+    public List<Group> updateGroupName(Integer id, String name) {
+        groupList.get(id-1).setName(name);
+        return groupList;
+    }
 }
