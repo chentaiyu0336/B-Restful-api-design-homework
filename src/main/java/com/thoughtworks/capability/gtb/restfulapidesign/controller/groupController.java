@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/v1/groups")
 public class groupController {
     private final GroupService groupService;
 
@@ -14,22 +15,22 @@ public class groupController {
         this.groupService = groupService;
     }
 
-    @PostMapping("/groups")
+    @PostMapping("")
     public List<Group> divideGroup() {
         return groupService.divideGroup();
     }
 
-    @GetMapping("/groups")
+    @GetMapping("")
     public List<Group> getGroup() {
         return groupService.getGroup();
     }
 
-    @PatchMapping("/groups/{id}/{name}")
+    @PatchMapping("/{id}/{name}")
     public List<Group> updateGroupName(@PathVariable Integer id, @PathVariable String name) {
         return groupService.updateGroupName(id, name);
     }
 
-    @GetMapping("/groups/{id}")
+    @GetMapping("/{id}")
     public Group findGroupById(@PathVariable Integer id) {
         return groupService.findGroupById(id);
     }

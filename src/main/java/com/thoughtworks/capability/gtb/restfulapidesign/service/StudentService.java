@@ -14,12 +14,11 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-    public List<Student> getStudentList() {
-        return studentRepository.getStudentList();
-    }
-
-    public List<Student> getStudentListByGender(String gender) {
-        return studentRepository.filterStudentsByGender(gender);
+    public List<Student> getStudentList(String gender) {
+        if (gender == null)
+            return studentRepository.getStudentList();
+        else
+            return studentRepository.filterStudentsByGender(gender);
     }
 
     public Student getStudentById(Integer id) {

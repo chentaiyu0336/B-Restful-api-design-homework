@@ -46,7 +46,7 @@ public class StudentRepository {
 
     public Student searchStudentById(Integer id) {
         if (id <= endId)
-            return studentList.stream().filter(student -> student.getId() == id).findFirst().get();
+            return studentList.stream().filter(student -> student.getId().equals(id)).findFirst().get();
         else
             return null;
     }
